@@ -25,7 +25,8 @@
             type="text"
             label="PLG_FACEBOOKPIXEL_FIELD_PIXELID_LABEL"
             description="PLG_FACEBOOKPIXEL_FIELD_BROWSERCACHE_DESC"
-            default="{pixel_id}"
+            default=""
+            hint="Enter your pixel ID here"
 				/>
 			</fieldset>
 		</fields>
