@@ -31,4 +31,7 @@
 			</fieldset>
 		</fields>
 	</config>
+  <updateservers>
+    <server type="extension" name="Official Facebook Pixel Plugin Updates">https://raw.githubusercontent.com/facebookincubator/Facebook-Pixel-for-Joomla/master/update.xml</server>
+  </updateservers>
 </extension>
