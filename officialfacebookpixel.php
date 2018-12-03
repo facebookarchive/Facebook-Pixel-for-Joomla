@@ -3,7 +3,7 @@
 
 /**
  * @package     Joomla.Plugin
- * @subpackage  System.facebookpixel
+ * @subpackage  System.officialfacebookpixel
  *
  * @copyright   Copyright 2004-present Facebook. All Rights Reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -17,7 +17,7 @@ use FacebookPixel\Core\Pixel;
 /**
  * Facebook Pixel Plugin
  */
-class PlgSystemFacebookPixel extends JPlugin {
+class PlgSystemOfficialFacebookPixel extends JPlugin {
   /**
    * The event triggered after the router has routed the client request
    */

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="system" method="upgrade">
-	<name>PLG_SYSTEM_FACEBOOKPIXEL</name>
+	<name>PLG_SYSTEM_OFFICIALFACEBOOKPIXEL</name>
 	<author>Facebook</author>
 	<creationDate>June 2018</creationDate>
 	<copyright>Copyright 2004-present Facebook. All Rights Reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorUrl>www.facebook.com</authorUrl>
-	<version>1.0.1</version>
-	<description>PLG_FACEBOOKPIXEL_XML_DESCRIPTION</description>
+	<version>1.0.2</version>
+	<description>PLG_OFFICIALFACEBOOKPIXEL_XML_DESCRIPTION</description>
 	<files>
-		<filename plugin="facebookpixel">facebookpixel.php</filename>
+		<filename plugin="officialfacebookpixel">officialfacebookpixel.php</filename>
 		<folder>core</folder>
 		<folder>vendor</folder>
 	</files>
 	<languages>
-		<language tag="en-GB">en-GB.plg_system_facebookpixel.ini</language>
-		<language tag="en-GB">en-GB.plg_system_facebookpixel.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_system_officialfacebookpixel.ini</language>
+		<language tag="en-GB">en-GB.plg_system_officialfacebookpixel.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
@@ -23,8 +23,8 @@
 				<field
             name="pixel_id"
             type="text"
-            label="PLG_FACEBOOKPIXEL_FIELD_PIXELID_LABEL"
-            description="PLG_FACEBOOKPIXEL_FIELD_BROWSERCACHE_DESC"
+            label="PLG_OFFICIALFACEBOOKPIXEL_FIELD_PIXELID_LABEL"
+            description="PLG_OFFICIALFACEBOOKPIXEL_FIELD_BROWSERCACHE_DESC"
             default=""
             hint="Enter your pixel ID here"
 				/>

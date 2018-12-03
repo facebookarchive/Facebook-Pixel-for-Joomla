@@ -1,4 +1,4 @@
-# Contributing to Facebook Pixel for Joomla
+# Contributing to Official Facebook Pixel
 We want to make contributing to this project as easy and transparent as
 possible.
 
@@ -58,6 +58,6 @@ There is no maximum limit for line lengths in files, however, a notional value o
 See the full coding standards here (https://developer.joomla.org/coding-standards/basic-guidelines.html).
 
 ## License
-By contributing to Facebook for Joomla, you agree that your contributions
+By contributing to Official Facebook Pixel, you agree that your contributions
 will be licensed under the LICENSE file in the root directory of
 this source tree.

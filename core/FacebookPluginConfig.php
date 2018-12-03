@@ -3,7 +3,7 @@
 
 /**
  * @package     Joomla.Plugin
- * @subpackage  System.facebookpixel
+ * @subpackage  System.officialfacebookpixel
  *
  * @copyright   Copyright 2004-present Facebook. All Rights Reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
