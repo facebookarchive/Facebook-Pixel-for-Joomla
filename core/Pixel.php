@@ -67,7 +67,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
   private static $pixelID;
 
   private static $pixelFbqTrackCode = "
-fbq('%s', '%s', '%s');
+fbq('%s', '%s', %s);
 ";
 
   public function __construct($pixel_id = '0') {
@@ -106,11 +106,51 @@ fbq('%s', '%s', '%s');
   }
 
   /**
+   * Gets Facebook pixel track code for AddToCart event
+   */
+  public static function getPixelTrackAddToCartCode($param = array(), $with_script_tag = true) {
+    return self::getPixelTrackCode(
+      self::ADDTOCART,
+      $param,
+      $with_script_tag);
+  }
+
+  /**
    * Gets Facebook pixel track code for Lead event
    */
   public static function getPixelTrackLeadCode($param = array(), $with_script_tag = true) {
     return self::getPixelTrackCode(
       self::LEAD,
+      $param,
+      $with_script_tag);
+  }
+
+  /**
+   * Gets Facebook pixel track code for InitiateCheckout event
+   */
+  public static function getPixelTrackInitiateCheckoutCode($param = array(), $with_script_tag = true) {
+    return self::getPixelTrackCode(
+      self::INITIATECHECKOUT,
+      $param,
+      $with_script_tag);
+  }
+
+  /**
+   * Gets Facebook pixel track code for Purchase event
+   */
+  public static function getPixelTrackPurchaseCode($param = array(), $with_script_tag = true) {
+    return self::getPixelTrackCode(
+      self::PURCHASE,
+      $param,
+      $with_script_tag);
+  }
+
+  /**
+   * Gets Facebook pixel track code for ViewContent event
+   */
+  public static function getPixelTrackViewContentCode($param = array(), $with_script_tag = true) {
+    return self::getPixelTrackCode(
+      self::VIEWCONTENT,
       $param,
       $with_script_tag);
   }

@@ -1,3 +1,6 @@
+1.0.3 (December 13, 2018)
+* Add "ViewContent", "AddToCart", "InitiateCheckout" and "Purchase" events for J2Store shopping cart plugin.
+
 1.0.2 (December 3, 2018)
 * Fix install name to "Official Facebook Pixel".
 

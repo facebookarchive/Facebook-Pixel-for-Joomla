@@ -6,7 +6,7 @@
 	<copyright>Copyright 2004-present Facebook. All Rights Reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorUrl>www.facebook.com</authorUrl>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<description>PLG_OFFICIALFACEBOOKPIXEL_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="officialfacebookpixel">officialfacebookpixel.php</filename>

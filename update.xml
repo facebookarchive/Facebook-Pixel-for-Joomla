@@ -5,7 +5,7 @@
     <description>Offcial Facebook Pixel Plugin Update</description>
     <element>officialfacebookpixel</element>
     <type>plugin</type>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <infourl title="Official Facebook Pixel Plugin">https://www.facebook.com/business/help/338648233365065</infourl>
     <downloads>
       <downloadurl type="full" format="zip">https://business.facebook.com/ads/pixel/integration/?integration=joomla</downloadurl>
