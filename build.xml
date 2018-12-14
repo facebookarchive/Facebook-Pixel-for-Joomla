@@ -14,6 +14,7 @@
         <exclude name="update.xml" />
         <exclude name="vendor/**" />
         <exclude name="tests/**" />
+        <exclude name="package/**" />
     </fileset>
 
     <!-- ============================================  -->
