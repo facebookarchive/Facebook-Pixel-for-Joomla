@@ -10,7 +10,7 @@
     <version>1.0.3</version>
     <infourl title="Official Facebook Pixel Plugin">https://www.facebook.com/business/help/338648233365065</infourl>
     <downloads>
-      <downloadurl type="full" format="zip">https://business.facebook.com/ads/pixel/integration/?integration=joomla</downloadurl>
+      <downloadurl type="full" format="zip">https://github.com/facebookincubator/Facebook-Pixel-for-Joomla/raw/master/package/plg_officialfacebookpixel_v1.0.3.zip</downloadurl>
     </downloads>
     <tags>
       <tag>stable</tag>
