@@ -11,6 +11,7 @@
 	<files>
 		<filename plugin="officialfacebookpixel">officialfacebookpixel.php</filename>
 		<folder>core</folder>
+    <folder>integrations</folder>
 		<folder>vendor</folder>
 	</files>
 	<languages>

@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 
 use FacebookPixel\Core\FacebookPluginConfig;
 use FacebookPixel\Core\Pixel;
+use FacebookPixel\Integrations\FacebookJoomlaContactForm;
 
 /**
  * Facebook Pixel Plugin
@@ -42,14 +43,7 @@ class PlgSystemOfficialFacebookPixel extends JPlugin {
       $this->injectPixelBaseCode($pixel_id);
     }
 
-    $is_form_submitted = $app->getUserState(FacebookPluginConfig::SUBMIT_JOOMLA_CONTACT_FORM, false);
-    if ($is_form_submitted) {
-      // Reset the user state
-      $app->setUserState(FacebookPluginConfig::SUBMIT_JOOMLA_CONTACT_FORM, false);
-
-      $script = Pixel::getPixelTrackLeadCode(array(), true);
-      $this->injectPixelTrackCode($script);
-    }
+    FacebookJoomlaContactForm::injectPixelTrackCode();
 
     $j2store_view_content_params = $app->getUserState(FacebookPluginConfig::J2STORE_VIEW_CONTENT, null);
     if ($j2store_view_content_params !== null) {
@@ -90,9 +84,7 @@ class PlgSystemOfficialFacebookPixel extends JPlugin {
    * @return void
    */
   public function onSubmitContact($contact, $data) {
-    $app = JFactory::getApplication();
-
-    $app->setUserState(FacebookPluginConfig::SUBMIT_JOOMLA_CONTACT_FORM, true);
+    FacebookJoomlaContactForm::processLeadEvent();
   }
 
   /**
