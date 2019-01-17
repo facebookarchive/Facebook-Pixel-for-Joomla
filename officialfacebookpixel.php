@@ -44,8 +44,11 @@ class PlgSystemOfficialFacebookPixel extends JPlugin {
       $this->injectPixelBaseCode($pixel_id);
     }
 
-    FacebookJoomlaContactForm::injectPixelTrackCode();
-    FacebookJoomlaJ2Store::injectPixelTrackCode();
+    $integration_config = FacebookPluginConfig::getIntegrationConfig();
+    foreach ($integration_config as $key => $value) {
+      $class_name = FacebookPluginConfig::INTEGRATIONS_NAMESPACE_PREFIX.$value;
+      $class_name::injectPixelTrackCode();
+    }
   }
 
   /**
