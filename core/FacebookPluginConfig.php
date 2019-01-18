@@ -18,12 +18,6 @@ defined('_JEXEC') or die;
  * Facebook Plugin Config
  */
 class FacebookPluginConfig {
-  const J2STORE_ADD_TO_CART = 'facebook.j2store.add_to_cart';
-  const J2STORE_INITIATE_CHECKOUT = 'facebook.j2store.initiate_checkout';
-  const J2STORE_PURCHASE = 'facebook.j2store.purchase';
-  const J2STORE_VIEW_CONTENT = 'facebook.j2store.view_content';
-  const SUBMIT_JOOMLA_CONTACT_FORM = 'facebook.joomla.contact_form_submitted';
-
   const INTEGRATIONS_NAMESPACE_PREFIX = 'FacebookPixel\\Integrations\\';
 
   // The config for integrations: INTEGRATION_KEY => PLUGIN_CLASS_NAME

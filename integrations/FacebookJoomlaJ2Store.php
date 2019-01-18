@@ -14,40 +14,44 @@ namespace FacebookPixel\Integrations;
 // No direct access
 defined('_JEXEC') or die;
 
-use FacebookPixel\Core\FacebookPluginConfig;
 use FacebookPixel\Core\Pixel;
 
 class FacebookJoomlaJ2Store extends FacebookJoomlaIntegrationBase {
+  const J2STORE_ADD_TO_CART = 'facebook.j2store.add_to_cart';
+  const J2STORE_INITIATE_CHECKOUT = 'facebook.j2store.initiate_checkout';
+  const J2STORE_PURCHASE = 'facebook.j2store.purchase';
+  const J2STORE_VIEW_CONTENT = 'facebook.j2store.view_content';
+
   public static function injectPixelTrackCode() {
     $app = \JFactory::getApplication();
 
-    $j2store_view_content_params = $app->getUserState(FacebookPluginConfig::J2STORE_VIEW_CONTENT, null);
+    $j2store_view_content_params = $app->getUserState(self::J2STORE_VIEW_CONTENT, null);
     if ($j2store_view_content_params !== null) {
-      $app->setUserState(FacebookPluginConfig::J2STORE_VIEW_CONTENT, null);
+      $app->setUserState(self::J2STORE_VIEW_CONTENT, null);
 
       $script = Pixel::getPixelTrackViewContentCode($j2store_view_content_params, true);
       parent::injectScript($script);
     }
 
-    $j2store_add_to_cart_params = $app->getUserState(FacebookPluginConfig::J2STORE_ADD_TO_CART, null);
+    $j2store_add_to_cart_params = $app->getUserState(self::J2STORE_ADD_TO_CART, null);
     if ($j2store_add_to_cart_params !== null) {
-      $app->setUserState(FacebookPluginConfig::J2STORE_ADD_TO_CART, null);
+      $app->setUserState(self::J2STORE_ADD_TO_CART, null);
 
       $script = Pixel::getPixelTrackAddToCartCode($j2store_add_to_cart_params, true);
       parent::injectScript($script);
     }
 
-    $j2store_initiate_checkout_params = $app->getUserState(FacebookPluginConfig::J2STORE_INITIATE_CHECKOUT, null);
+    $j2store_initiate_checkout_params = $app->getUserState(self::J2STORE_INITIATE_CHECKOUT, null);
     if ($j2store_initiate_checkout_params !== null) {
-      $app->setUserState(FacebookPluginConfig::J2STORE_INITIATE_CHECKOUT, null);
+      $app->setUserState(self::J2STORE_INITIATE_CHECKOUT, null);
 
       $script = Pixel::getPixelTrackInitiateCheckoutCode($j2store_initiate_checkout_params, true);
       parent::injectScript($script);
     }
 
-    $j2store_purchase_params = $app->getUserState(FacebookPluginConfig::J2STORE_PURCHASE, null);
+    $j2store_purchase_params = $app->getUserState(self::J2STORE_PURCHASE, null);
     if ($j2store_purchase_params !== null) {
-      $app->setUserState(FacebookPluginConfig::J2STORE_PURCHASE, null);
+      $app->setUserState(self::J2STORE_PURCHASE, null);
 
       $script = Pixel::getPixelTrackPurchaseCode($j2store_purchase_params, true);
       parent::injectScript($script);
@@ -67,7 +71,7 @@ class FacebookJoomlaJ2Store extends FacebookJoomlaIntegrationBase {
     );
 
     $app = \JFactory::getApplication();
-    $app->setUserState(FacebookPluginConfig::J2STORE_VIEW_CONTENT, $params);
+    $app->setUserState(self::J2STORE_VIEW_CONTENT, $params);
   }
 
   public static function processAddToCartEvent($cart_item, $value, $product) {
@@ -85,7 +89,7 @@ class FacebookJoomlaJ2Store extends FacebookJoomlaIntegrationBase {
     );
 
     $app = \JFactory::getApplication();
-    $app->setUserState(FacebookPluginConfig::J2STORE_ADD_TO_CART, $params);
+    $app->setUserState(self::J2STORE_ADD_TO_CART, $params);
   }
 
   public static function processInitiateCheckoutEvent($order) {
@@ -106,7 +110,7 @@ class FacebookJoomlaJ2Store extends FacebookJoomlaIntegrationBase {
     );
 
     $app = \JFactory::getApplication();
-    $app->setUserState(FacebookPluginConfig::J2STORE_INITIATE_CHECKOUT, $params);
+    $app->setUserState(self::J2STORE_INITIATE_CHECKOUT, $params);
   }
 
   public static function processPurchaseEvent($order) {
@@ -127,6 +131,6 @@ class FacebookJoomlaJ2Store extends FacebookJoomlaIntegrationBase {
     );
 
     $app = \JFactory::getApplication();
-    $app->setUserState(FacebookPluginConfig::J2STORE_PURCHASE, $params);
+    $app->setUserState(self::J2STORE_PURCHASE, $params);
   }
 }
