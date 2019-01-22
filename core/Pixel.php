@@ -39,9 +39,6 @@ class Pixel {
   const SUBSCRIBE = 'Subscribe';
   const VIEWCONTENT = 'ViewContent';
 
-  const PARTNER_NAME = 'Joomla';
-  const PARTNER_AGENT_NAME = 'pljoomla';
-
   const SCRIPT_TAG_HEAD = "<script type='text/javascript'>";
   const SCRIPT_TAG_TAIL = '</script>';
 
@@ -79,11 +76,11 @@ fbq('%s', '%s', %s);
    */
   public function getPixelBaseCode() {
     return sprintf(self::PIXEL_CODE,
-      self::PARTNER_NAME,
+      FacebookPluginConfig::PARTNER_NAME,
       self::$pixelID,
       self::getParameters(),
       self::$pixelID,
-      self::PARTNER_NAME);
+      FacebookPluginConfig::PARTNER_NAME);
   }
 
   /**
@@ -159,6 +156,6 @@ fbq('%s', '%s', %s);
    * Returns Facebook pixel code script parameters part
    */
   private function getParameters() {
-    return "{agent: '".self::PARTNER_AGENT_NAME."'}";
+    return "{agent: '".FacebookPluginConfig::PIXEL_AGENT_NAME."'}";
   }
 }

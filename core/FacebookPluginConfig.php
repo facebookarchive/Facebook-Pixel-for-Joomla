@@ -18,6 +18,11 @@ defined('_JEXEC') or die;
  * Facebook Plugin Config
  */
 class FacebookPluginConfig {
+  const PLUGIN_VERSION = '1.0.3';
+
+  const PARTNER_NAME = 'Joomla';
+  const PIXEL_AGENT_NAME = 'pljoomla';
+
   const INTEGRATIONS_NAMESPACE_PREFIX = 'FacebookPixel\\Integrations\\';
 
   // The config for integrations: INTEGRATION_KEY => PLUGIN_CLASS_NAME
