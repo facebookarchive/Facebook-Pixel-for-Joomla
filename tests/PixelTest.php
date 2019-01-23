@@ -13,6 +13,7 @@ namespace FacebookPixel\Tests;
 
 use PHPUnit\Framework\TestCase;
 use FacebookPixel\Core\Pixel;
+use FacebookPixel\Core\FacebookPluginConfig;
 
 define('_JEXEC', 1);
 
@@ -35,7 +36,7 @@ final class PixelTest extends TestCase {
     $this->assertTrue(strpos($base_code, '</script>') !== false);
     $this->assertTrue(strpos($base_code, 'init') !== false);
     $this->assertTrue(strpos($base_code, self::TEST_PIXEL_ID) !== false);
-    $this->assertTrue(strpos($base_code, Pixel::PARTNER_AGENT_NAME) !== false);
+    $this->assertTrue(strpos($base_code, FacebookPluginConfig::PIXEL_AGENT_NAME) !== false);
   }
 
   public function testCanGetPixelTrackCodeWithNonStandardEventAndScriptTag() {
@@ -71,5 +72,12 @@ final class PixelTest extends TestCase {
     $this->assertFalse(strpos($track_code, 'trackCustom') !== false);
     $this->assertFalse(strpos($track_code, '<script') !== false);
     $this->assertFalse(strpos($track_code, '</script>') !== false);
+  }
+
+  public function testGetAgentString() {
+    $agent_string = Pixel::getAgentString();
+
+    $this->assertEquals(FacebookPluginConfig::PIXEL_AGENT_NAME.'-0-'
+      .FacebookPluginConfig::PLUGIN_VERSION, $agent_string);
   }
 }

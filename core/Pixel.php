@@ -153,9 +153,33 @@ fbq('%s', '%s', %s);
   }
 
   /**
+   * Gets the agent string
+   */
+  public static function getAgentString() {
+    $joomla_version = '0';
+
+    if (class_exists(\JVersion::class)) {
+      $version = new \JVersion();
+      $joomla_version = $version->getShortVersion();
+    }
+
+    $plugin_version = FacebookPluginConfig::PLUGIN_VERSION;
+
+    $agent = FacebookPluginConfig::PIXEL_AGENT_NAME;
+
+    return sprintf(
+      '%s-%s-%s',
+      $agent,
+      $joomla_version,
+      $plugin_version);
+  }
+
+  /**
    * Returns Facebook pixel code script parameters part
    */
   private function getParameters() {
-    return "{agent: '".FacebookPluginConfig::PIXEL_AGENT_NAME."'}";
+    $agent_string = self::getAgentString();
+
+    return "{'agent': '$agent_string'}";
   }
 }
